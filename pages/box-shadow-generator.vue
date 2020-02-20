@@ -1,5 +1,5 @@
 <template>
-  <v-layout class="box-shadow-generator">
+  <v-layout class="box-shadow-generator" wrap>
     <v-flex>
       <v-flex>
         <v-card>

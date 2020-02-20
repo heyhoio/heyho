@@ -26,8 +26,9 @@
     </v-navigation-drawer>
     <v-app-bar :clipped-left="clipped" fixed dense app elevate-on-scroll>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <nuxt-link to="/" tag="v-toolbar-title">
-        HeyHo.io
+      <nuxt-link to="/" tag="v-toolbar-title" class="nav-logo d-flex">
+        <img src="@/static/logo.svg" alt="logo" class="mr-1" />
+        heyho
       </nuxt-link>
     </v-app-bar>
     <v-content>
@@ -75,3 +76,10 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+.nav-logo {
+  align-items: center;
+  cursor: pointer;
+}
+</style>

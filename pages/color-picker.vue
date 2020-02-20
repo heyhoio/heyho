@@ -9,13 +9,11 @@
     <h1 class="font-weight-thin mb-5">Color and Palette Picker</h1>
     <div v-for="(pallete, index) in palletes" :key="index">
       <h2 class="mt-5 mb-5 headline font-weight-light">{{ pallete.name }}</h2>
-      <v-flex d-flex>
+      <v-flex d-flex flex-wrap>
         <v-card
           v-for="color in pallete.colors"
           :key="color"
           :style="{ backgroundColor: `#${color}` }"
-          width="200px"
-          height="150px"
           class="color-picker__pallete-item"
           @click="savePallete(color)"
         >
@@ -83,9 +81,17 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
+@import '~vuetify/src/styles/settings/_variables';
+
 .color-picker {
   &__pallete-item {
     cursor: pointer;
+    width: 200px;
+    height: 200px;
+    @media #{map-get($display-breakpoints, 'xs-only')} {
+      width: 100px;
+      height: 100px;
+    }
   }
 }
 </style>
