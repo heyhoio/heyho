@@ -5,12 +5,8 @@
       As developers we care to provide awesome tooling!
     </p>
     <v-list width="100%">
-      <nuxt-link
-        v-for="({ to, text }, index) in links"
-        :key="to"
-        :to="to"
-        tag="v-list-item"
-        >{{ index + 1 }}. {{ text }}</nuxt-link
+      <v-list-item v-for="({ to, text }, index) in links" :key="to" :to="to"
+        >{{ index + 1 }}. {{ text }}</v-list-item
       >
     </v-list>
   </v-layout>
