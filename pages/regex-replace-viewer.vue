@@ -13,7 +13,7 @@
   </v-layout>
 </template>
 
-<script lang="ts">
+<script>
 import Vue from 'vue'
 
 export default Vue.extend({
@@ -25,7 +25,7 @@ export default Vue.extend({
   }),
   computed: {
     result() {
-      let regex: RegExp | string = ''
+      let regex = ''
       try {
         regex = new RegExp(`${this.regex}`, 'g')
       } catch (error) {}
