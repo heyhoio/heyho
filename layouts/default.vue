@@ -55,6 +55,16 @@ export default {
           icon: 'mdi-chart-bubble',
           title: 'Color Picker',
           to: '/color-picker'
+        },
+        {
+          icon: 'mdi-chart-bubble',
+          title: 'Regex Replace Viewer',
+          to: '/regex-replace-viewer'
+        },
+        {
+          icon: 'mdi-chart-bubble',
+          title: 'Box Shadow Generator',
+          to: '/box-shadow-generator'
         }
       ],
       miniVariant: false,
