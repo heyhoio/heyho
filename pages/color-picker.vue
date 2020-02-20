@@ -7,7 +7,7 @@
       </v-btn>
     </v-snackbar>
     <div v-for="(pallete, index) in palletes" :key="index">
-      <h2 class="mt-5">{{ pallete.name }}</h2>
+      <h2 class="mt-5 mb-5 headline font-weight-light">{{ pallete.name }}</h2>
       <v-flex d-flex>
         <v-card
           v-for="color in pallete.colors"

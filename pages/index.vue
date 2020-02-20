@@ -1,6 +1,7 @@
 <template>
   <v-layout column justify-center align-center>
     <h1>Here are some DevTools!</h1>
+    <p>As developers we care to provide awesome tooling!</p>
     <nuxt-link v-for="({ to, text }, index) in links" :key="to" :to="to"
       >{{ index + 1 }}.{{ text }}</nuxt-link
     >

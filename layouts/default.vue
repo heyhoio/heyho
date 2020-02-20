@@ -24,18 +24,17 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-app-bar :clipped-left="clipped" fixed app>
+    <v-app-bar :clipped-left="clipped" fixed dense app elevate-on-scroll>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
+      <nuxt-link to="/" tag="v-toolbar-title">
+        HeyHo.io
+      </nuxt-link>
     </v-app-bar>
     <v-content>
       <v-container>
         <nuxt />
       </v-container>
     </v-content>
-
-    <v-footer :fixed="fixed" app>
-      <span>&copy; {{ new Date().getFullYear() }}</span>
-    </v-footer>
   </v-app>
 </template>
 
@@ -54,8 +53,8 @@ export default {
         },
         {
           icon: 'mdi-chart-bubble',
-          title: 'Inspire',
-          to: '/inspire'
+          title: 'Color Picker',
+          to: '/color-picker'
         }
       ],
       miniVariant: false,
