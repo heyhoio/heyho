@@ -1,5 +1,5 @@
 <template>
-  <v-layout d-flex flex-column>
+  <v-layout d-flex flex-column align-center justify-center>
     <v-snackbar v-model="snackbar" :color="snackbarColor" :timeout="timeout">
       Color copied to clipboard
       <v-btn color="blue" text @click="snackbar = false">
