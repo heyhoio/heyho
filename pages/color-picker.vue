@@ -73,7 +73,7 @@ export default Vue.extend({
   }),
   methods: {
     savePallete(color) {
-      navigator.clipboard.writeText(color)
+      navigator.clipboard.writeText(`#${color}`)
       this.snackbarColor = `#${color}`
       this.snackbar = true
     }
