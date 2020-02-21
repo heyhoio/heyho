@@ -30,6 +30,10 @@
         <img src="@/static/logo.svg" alt="logo" class="mr-1" />
         heyho
       </nuxt-link>
+      <v-spacer></v-spacer>
+      <nuxt-link to="/about" tag="span">
+        about
+      </nuxt-link>
     </v-app-bar>
     <v-content>
       <v-container>
