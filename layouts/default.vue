@@ -70,6 +70,11 @@ export default {
           icon: 'mdi-chart-bubble',
           title: 'Box Shadow Generator',
           to: '/box-shadow-generator'
+        },
+        {
+          icon: 'mdi-chart-bubble',
+          title: 'CSS Filters',
+          to: '/css-filters'
         }
       ],
       miniVariant: false,
