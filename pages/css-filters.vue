@@ -1,8 +1,8 @@
 <template>
   <v-layout>
     <div>
-      <h1 class="font-weight-thin mb-5">Color and Palette Picker</h1>
-      <div class="d-flex">
+      <h1 class="font-weight-thin mb-5 text-center">CSS Filters Generator</h1>
+      <div class="d-flex css-filters__outer-wrapper">
         <v-card class="css-filters__control-wrapper">
           <v-card-text
             v-for="({ max, min, name, model }, index) in filterProps"
@@ -29,9 +29,9 @@
             :style="{ filter: filters }"
             src="@/static/zelda.jpg"
             alt="logo"
-            class="mr-1 ml-5 css-filters__example-image"
+            class="mr-1 css-filters__example-image"
           />
-          <div class="ml-5 mt-5">
+          <div class="css-filters__card-wrapper">
             <v-card>
               <v-card-text> filter: {{ filters }} </v-card-text>
             </v-card>
@@ -119,12 +119,39 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
+@import '~vuetify/src/styles/settings/_variables';
+
 .css-filters {
+  &__outer-wrapper {
+    @media #{map-get($display-breakpoints, 'sm-and-down')} {
+      flex-wrap: wrap;
+    }
+  }
   &__control-wrapper {
-    width: 500px;
+    width: 300px;
+    @media #{map-get($display-breakpoints, 'md-and-down')} {
+      width: 100%;
+      flex: 1 auto;
+    }
   }
   &__example-image {
     width: 100%;
+    margin-left: 20px;
+    @media #{map-get($display-breakpoints, 'md-and-down')} {
+      width: 100%;
+      margin-left: 0px;
+      margin-top: 20px;
+    }
+  }
+  &__card-wrapper {
+    display: flex;
+    margin-left: 20px;
+    margin-top: 20px;
+    @media #{map-get($display-breakpoints, 'md-and-down')} {
+      width: 100%;
+      margin-left: 0px;
+      margin-top: 20px;
+    }
   }
 }
 </style>

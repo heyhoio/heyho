@@ -6,7 +6,7 @@
         Close
       </v-btn>
     </v-snackbar>
-    <h1 class="font-weight-thin mb-5">Color and Palette Picker</h1>
+    <h1 class="font-weight-thin mb-5 text-center">Color and Palette Picker</h1>
     <div v-for="(pallete, index) in palletes" :key="index">
       <h2 class="mt-5 mb-5 headline font-weight-light">{{ pallete.name }}</h2>
       <v-flex d-flex flex-wrap>

@@ -1,13 +1,14 @@
 <template>
-  <v-layout class="box-shadow-generator" wrap>
-    <v-flex>
-      <v-flex>
+  <v-layout class="box-shadow-generator d-flex flex-column">
+    <h1 class="font-weight-thin mb-5 text-center">Color and Palette Picker</h1>
+    <div class="d-flex box-shadow-generator__outer-wrapper">
+      <div class="box-shadow-generator__controls-wrapper">
         <v-card>
           <v-card-text
             v-for="({ max, min, name, model, color }, index) in boxShadowProps"
             :key="index"
           >
-            <v-flex d-flex class="justify-space-between align-center">
+            <div d-flex class="justify-space-between align-center">
               <p>{{ name }}</p>
               <v-switch
                 v-if="typeof boxShadowProps[index].model === 'boolean'"
@@ -16,7 +17,7 @@
               <p v-if="typeof boxShadowProps[index].model === 'string'">
                 {{ boxShadowProps[index].model }}
               </p>
-            </v-flex>
+            </div>
             <v-slider
               v-if="typeof min !== 'undefined'"
               v-model="boxShadowProps[index].model"
@@ -31,31 +32,26 @@
             />
           </v-card-text>
         </v-card>
-      </v-flex>
-    </v-flex>
-    <v-flex d-flex flex-column justify-center align-center>
-      <v-flex
-        d-flex
-        flex-column
-        justify-center
-        align-center
-        class="indigo lighten-4 box-shadow-generator__box-container"
-      >
-        <div
-          class="box-shadow-generator__box"
-          :style="{ 'box-shadow': boxShadow }"
-        />
-      </v-flex>
-      <v-flex d-flex flex-column justify-center align-center>
-        <v-card>
-          <v-card-text>
-            <p>box-shadow: {{ boxShadow }};</p>
-            <p>-webkit-box-shadow: {{ boxShadow }};</p>
-            <p>-moz-box-shadow:{{ boxShadow }};</p>
-          </v-card-text>
-        </v-card>
-      </v-flex>
-    </v-flex>
+      </div>
+
+      <div class="box-shadow-generator__box-container">
+        <div class="indigo lighten-4 d-flex align-center justify-center">
+          <div
+            class="box-shadow-generator__box"
+            :style="{ 'box-shadow': boxShadow }"
+          />
+        </div>
+        <div class="d-flex flex-column justify-center align-center mt-5">
+          <v-card>
+            <v-card-text>
+              <p>box-shadow: {{ boxShadow }};</p>
+              <p>-webkit-box-shadow: {{ boxShadow }};</p>
+              <p>-moz-box-shadow:{{ boxShadow }};</p>
+            </v-card-text>
+          </v-card>
+        </div>
+      </div>
+    </div>
   </v-layout>
 </template>
 
@@ -119,14 +115,32 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
+@import '~vuetify/src/styles/settings/_variables';
+
 .box-shadow-generator {
   &__box {
     width: 300px;
     height: 300px;
     background-color: #d2d2d2;
+    margin: 150px;
+  }
+  &__outer-wrapper {
+    @media #{map-get($display-breakpoints, 'md-and-down')} {
+      flex-wrap: wrap;
+    }
+  }
+  &__controls-wrapper {
+    @media #{map-get($display-breakpoints, 'md-and-down')} {
+      width: 100%;
+    }
   }
   &__box-container {
     width: 100%;
+    margin-left: 20px;
+    @media #{map-get($display-breakpoints, 'md-and-down')} {
+      margin-left: 0px;
+      margin-top: 20px;
+    }
   }
 }
 </style>
