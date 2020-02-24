@@ -75,6 +75,21 @@ export default {
           icon: 'mdi-chart-bubble',
           title: 'CSS Filters',
           to: '/css-filters'
+        },
+        {
+          icon: 'mdi-chart-bubble',
+          title: 'Border Radius Generator',
+          to: '/border-radius-generator'
+        },
+        {
+          icon: 'mdi-chart-bubble',
+          title: 'Text Shadow Generator',
+          to: '/text-shadow-generator'
+        },
+        {
+          icon: 'mdi-chart-bubble',
+          title: 'Base64 Converter',
+          to: '/b64-converter'
         }
       ],
       miniVariant: false,

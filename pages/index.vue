@@ -19,7 +19,10 @@ export default {
       { to: '/color-picker', text: 'Color Picker' },
       { to: '/regex-replace-viewer', text: 'Regex Replace Viewer' },
       { to: '/box-shadow-generator', text: 'Box Shadow Generator' },
-      { to: '/css-filters', text: 'CSS Filters' }
+      { to: '/css-filters', text: 'CSS Filters' },
+      { to: '/border-radius-generator', text: 'Border Radius Generator' },
+      { to: '/text-shadow-generator', text: 'Text Shadow Generator' },
+      { to: '/b64-converter', text: 'Base64 Converter' }
     ]
   })
 }
