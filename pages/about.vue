@@ -23,6 +23,18 @@ export default Vue.extend({
   name: 'About',
   data: () => ({
     links: [{ to: 'https://github.com/douglas-pires', text: 'Douglas Pires' }]
-  })
+  }),
+  head() {
+    return {
+      title: 'HeyHo - About Us',
+      meta: [
+        {
+          hid: 'About page',
+          name: 'About page',
+          content: 'This is us, please contact us whenever possible :D'
+        }
+      ]
+    }
+  }
 })
 </script>

@@ -76,6 +76,19 @@ export default Vue.extend({
       this.snackbarColor = `#${color}`
       this.snackbar = true
     }
+  },
+  head() {
+    return {
+      title: 'HeyHo - Color Picker and Theme Viewer',
+      meta: [
+        {
+          hid: 'color picker and theme viewer',
+          name: 'Color Picker and Theme Viewer',
+          content:
+            'A color picker and theme viewer to get an ready-to-use visualization on some nice colors to use into your UI'
+        }
+      ]
+    }
   }
 })
 </script>

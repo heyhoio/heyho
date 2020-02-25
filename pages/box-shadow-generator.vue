@@ -110,6 +110,19 @@ export default Vue.extend({
         spread.model
       }px ${shadowColor.color} ${inset.model ? 'inset' : ''}`
     }
+  },
+  head() {
+    return {
+      title: 'HeyHo - Box Shadow Generator',
+      meta: [
+        {
+          hid: 'box shadow generator',
+          name: 'Box Shadow Generator',
+          content:
+            'A box shadow generator to get an ready-to-use visualization on box-shadow CSS property'
+        }
+      ]
+    }
   }
 })
 </script>

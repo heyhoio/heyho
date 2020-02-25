@@ -114,6 +114,19 @@ export default Vue.extend({
 
       return `contrast(${contrast.model}%) brightness(${brightness.model}%) saturate(${saturate.model}%) sepia(${sepia.model}%) grayscale(${grayscale.model}%) invert(${invert.model}%) hue-rotate(${hue.model}deg) blur(${blur.model}px)`
     }
+  },
+  head() {
+    return {
+      title: 'HeyHo - CSS Filters',
+      meta: [
+        {
+          hid: 'css filters',
+          name: 'CSS Filters',
+          content:
+            'A CSS Filters generator to get an ready-to-use visualization on CSS Filters property'
+        }
+      ]
+    }
   }
 })
 </script>
