@@ -1,9 +1,17 @@
 <template>
   <v-layout>
-    <v-dialog v-model="dialog">
+    <v-snackbar v-model="snackbar">
+      Credit Card copied to clipboard
+    </v-snackbar>
+    <v-dialog v-model="dialog" max-width="400px">
       <v-card>
         <v-card-title class="headline">{{ brand }}</v-card-title>
-        <v-card-text> {{ card }}. </v-card-text>
+        <v-card-text
+          class="credit-card-generator__card"
+          @click="saveToClipboard"
+        >
+          {{ card }} <v-icon>mdi-content-copy</v-icon>
+        </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn color="green darken-1" text @click="dialog = false">
@@ -49,13 +57,18 @@ export default Vue.extend({
       'JCB',
       'Voyager'
     ],
-    dialog: false
+    dialog: false,
+    snackbar: false
   }),
   methods: {
     generate() {
       if (!this.brand) return
-      ;[this.card] = generator.GenCC(this.brand)
+      this.card = generator.GenCC(this.brand)[0]
       this.dialog = true
+    },
+    saveToClipboard() {
+      navigator.clipboard.writeText(this.card)
+      this.snackbar = true
     }
   }
 })
@@ -66,6 +79,9 @@ export default Vue.extend({
   &__selector,
   &__button {
     width: 200px;
+  }
+  &__dialog {
+    max-width: 400px !important;
   }
 }
 </style>
