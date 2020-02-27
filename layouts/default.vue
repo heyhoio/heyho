@@ -75,6 +75,11 @@ export default {
           icon: 'mdi-chart-bubble',
           title: 'CSS Filters',
           to: '/css-filters'
+        },
+        {
+          icon: 'mdi-chart-bubble',
+          title: 'Credit Card Generator',
+          to: '/credit-card-generator'
         }
       ],
       miniVariant: false,
