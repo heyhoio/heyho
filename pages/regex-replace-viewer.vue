@@ -31,6 +31,19 @@ export default Vue.extend({
       } catch (error) {}
       return String(this.text).replace(regex, this.replaceBy)
     }
+  },
+  head() {
+    return {
+      title: 'HeyHo - Regex Replace Viewer',
+      meta: [
+        {
+          hid: 'regex replace viewer',
+          name: 'Regex Replace Viewer',
+          content:
+            'A tool to visualize what is the result of your regex when using String.replace JavaScript method'
+        }
+      ]
+    }
   }
 })
 </script>

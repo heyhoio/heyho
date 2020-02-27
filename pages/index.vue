@@ -21,6 +21,19 @@ export default {
       { to: '/box-shadow-generator', text: 'Box Shadow Generator' },
       { to: '/css-filters', text: 'CSS Filters' }
     ]
-  })
+  }),
+  head() {
+    return {
+      title: 'HeyHo - Ready to Use Development Tools',
+      meta: [
+        {
+          hid: 'ready to use development tools',
+          name: 'Ready to Use Development Tools',
+          content:
+            'A bunch of tooling, ready-to-use, visualizers, curious stuff for developers'
+        }
+      ]
+    }
+  }
 }
 </script>
