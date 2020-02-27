@@ -23,7 +23,21 @@ export default {
       { to: '/border-radius-generator', text: 'Border Radius Generator' },
       { to: '/text-shadow-generator', text: 'Text Shadow Generator' },
       { to: '/b64-converter', text: 'Base64 Converter' }
+      { to: '/credit-card-generator', text: 'Credit Card Generator' }
     ]
-  })
+  }),
+  head() {
+    return {
+      title: 'HeyHo - Ready to Use Development Tools',
+      meta: [
+        {
+          hid: 'ready to use development tools',
+          name: 'Ready to Use Development Tools',
+          content:
+            'A bunch of tooling, ready-to-use, visualizers, curious stuff for developers'
+        }
+      ]
+    }
+  }
 }
 </script>

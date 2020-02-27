@@ -90,6 +90,11 @@ export default {
           icon: 'mdi-chart-bubble',
           title: 'Base64 Converter',
           to: '/b64-converter'
+        },
+        {
+          icon: 'mdi-chart-bubble',
+          title: 'Credit Card Generator',
+          to: '/credit-card-generator'
         }
       ],
       miniVariant: false,
