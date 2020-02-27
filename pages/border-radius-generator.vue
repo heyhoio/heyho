@@ -38,7 +38,10 @@
         <div class="indigo lighten-4 d-flex align-center justify-center">
           <div
             class="border-radius-generator__box"
-            :style="{ 'border-radius': borderRadius }"
+            :style="{
+              'border-radius': borderRadius,
+              'background-color': bgColor
+            }"
           />
         </div>
         <div class="d-flex flex-column justify-center align-center mt-5">
@@ -83,6 +86,10 @@ export default Vue.extend({
         min: 0,
         max: 40,
         model: ''
+      },
+      {
+        name: 'Background Color',
+        color: '#000'
       }
     ]
   }),
@@ -90,6 +97,13 @@ export default Vue.extend({
     borderRadius() {
       const [top, right, bottom, left] = this.borderProps
       return `${top.model}px ${right.model}px ${bottom.model}px ${left.model}px`
+    },
+    bgColor() {
+      const [bgColor] = this.borderProps.filter(
+        (prop) => prop.name === 'Background Color'
+      )
+
+      return `${bgColor.color}`
     }
   }
 })
@@ -102,7 +116,7 @@ export default Vue.extend({
   &__box {
     width: 300px;
     height: 300px;
-    background-color: #d2d2d2;
+    background-color: rgba(63, 2, 63, 0.815);
     margin: 150px;
   }
   &__outer-wrapper {
