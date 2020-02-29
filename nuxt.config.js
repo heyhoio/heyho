@@ -5,6 +5,7 @@ export default {
   /*
    ** Headers of the page
    */
+
   head: {
     titleTemplate: '%s - Heyho',
     title: process.env.npm_package_name || '',
