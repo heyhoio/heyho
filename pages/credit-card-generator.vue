@@ -70,6 +70,19 @@ export default Vue.extend({
       navigator.clipboard.writeText(this.card)
       this.snackbar = true
     }
+  },
+  head() {
+    return {
+      title: 'Credit Card Generator',
+      meta: [
+        {
+          hid: 'credit card generator',
+          name: 'Credit Card Generator',
+          content:
+            'A credit card generator to get an ready-to-use credit-card valid number'
+        }
+      ]
+    }
   }
 })
 </script>

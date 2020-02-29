@@ -26,7 +26,7 @@ export default Vue.extend({
   }),
   head() {
     return {
-      title: 'HeyHo - About Us',
+      title: 'About Us',
       meta: [
         {
           hid: 'About page',

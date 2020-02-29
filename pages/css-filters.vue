@@ -117,7 +117,7 @@ export default Vue.extend({
   },
   head() {
     return {
-      title: 'HeyHo - CSS Filters',
+      title: 'CSS Filters',
       meta: [
         {
           hid: 'css filters',

@@ -113,7 +113,7 @@ export default Vue.extend({
   },
   head() {
     return {
-      title: 'HeyHo - Box Shadow Generator',
+      title: 'Box Shadow Generator',
       meta: [
         {
           hid: 'box shadow generator',
