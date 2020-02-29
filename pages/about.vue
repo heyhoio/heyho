@@ -24,7 +24,8 @@ export default Vue.extend({
       { to: 'https://github.com/douglas-pires', text: 'Douglas Pires' },
       { to: 'https://github.com/AustinFelipe', text: 'Austin Felipe' },
       { to: 'https://github.com/Carl13da', text: 'Carlos Henrique' },
-      { to: 'https://github.com/vaahxx', text: 'Valentina Garavaglia' }
+      { to: 'https://github.com/vaahxx', text: 'Valentina Garavaglia' },
+      { to: 'https://github.com/DanilloMaster', text: 'Danillo Caetano' }
     ]
   }),
   head() {
