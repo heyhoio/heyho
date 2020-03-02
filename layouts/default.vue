@@ -88,8 +88,8 @@ export default {
         },
         {
           icon: 'mdi-chart-bubble',
-          title: 'Base64 Converter',
-          to: '/base64-converter'
+          title: 'Base 64 Converter',
+          to: '/base-64-converter'
         },
         {
           icon: 'mdi-chart-bubble',
