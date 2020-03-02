@@ -20,7 +20,7 @@
 
 <script>
 import Vue from 'vue'
-import { encode, decode } from '@/utils/base64'
+import { encode, decode } from '../utils/base64'
 
 export default Vue.extend({
   name: 'Base64Converter',
