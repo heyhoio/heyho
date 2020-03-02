@@ -28,7 +28,7 @@ export default {
   }),
   head() {
     return {
-      title: 'HeyHo - Ready to Use Development Tools',
+      title: 'Ready to Use Development Tools',
       meta: [
         {
           hid: 'ready to use development tools',

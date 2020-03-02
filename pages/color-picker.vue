@@ -79,7 +79,7 @@ export default Vue.extend({
   },
   head() {
     return {
-      title: 'HeyHo - Color Picker and Theme Viewer',
+      title: 'Color Picker and Theme Viewer',
       meta: [
         {
           hid: 'color picker and theme viewer',
