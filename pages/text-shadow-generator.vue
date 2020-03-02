@@ -99,6 +99,19 @@ export default Vue.extend({
       const [right, down, blur, shadowColor] = this.textShadowProps
       return `${right.model}px ${down.model}px ${blur.model}px ${shadowColor.color}`
     }
+  },
+  head() {
+    return {
+      title: 'Text Shadow Generator',
+      meta: [
+        {
+          hid: 'text shadow generator',
+          name: 'Text Shadow Generator',
+          content:
+            'A Text Shadow Generator to get an ready-to-use visualization of text-shadow CSS property'
+        }
+      ]
+    }
   }
 })
 </script>

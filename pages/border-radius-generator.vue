@@ -105,6 +105,19 @@ export default Vue.extend({
 
       return `${bgColor.color}`
     }
+  },
+  head() {
+    return {
+      title: 'Border Radius Generator',
+      meta: [
+        {
+          hid: 'border radius generator',
+          name: 'Border Radius Generator',
+          content:
+            'A Border Radius Generator to get an ready-to-use visualization of border-radius CSS property'
+        }
+      ]
+    }
   }
 })
 </script>
