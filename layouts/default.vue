@@ -89,7 +89,7 @@ export default {
         {
           icon: 'mdi-chart-bubble',
           title: 'Base64 Converter',
-          to: '/b64-converter'
+          to: '/base64-converter'
         },
         {
           icon: 'mdi-chart-bubble',
