@@ -7,16 +7,20 @@
       outlined
       label="Original Text"
     />
-    <v-flex>
+    <v-flex class="base-64-converter__result-wrapper">
       <p>Result:</p>
       <p class="base-64-converter__result">{{ result }}</p>
+    </v-flex>
+    <v-flex class="base-64-converter__result-wrapper">
+      <p>Decoded:</p>
+      <p class="base-64-converter__result">{{ decodedResult }}</p>
     </v-flex>
   </v-layout>
 </template>
 
 <script>
 import Vue from 'vue'
-import { encode } from '@/utils/base64'
+import { encode, decode } from '@/utils/base64'
 
 export default Vue.extend({
   name: 'Base64Converter',
@@ -25,7 +29,8 @@ export default Vue.extend({
     convertToBase64: true
   }),
   computed: {
-    result: (vm) => encode(vm.text)
+    result: (vm) => encode(vm.text),
+    decodedResult: (vm) => decode(vm.result)
   },
   head() {
     return {
@@ -45,7 +50,8 @@ export default Vue.extend({
 
 <style lang="scss">
 .base-64-converter {
-  &__textarea {
+  &__textarea,
+  &__result-wrapper {
     width: 500px;
   }
   &__result {
