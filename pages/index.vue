@@ -1,8 +1,8 @@
 <template>
   <v-layout column justify-center align-center>
-    <h1 class="font-weight-thin">Here are some DevTools!</h1>
+    <h1 class="font-weight-thin">Opensource Developer Tooling!</h1>
     <p class="headline font-weight-light">
-      As developers we care to provide awesome tooling!
+      From developers to developers 🥰!
     </p>
     <v-list width="100%">
       <v-list-item v-for="({ to, text }, index) in links" :key="to" :to="to"
