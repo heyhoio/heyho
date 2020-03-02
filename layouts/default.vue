@@ -78,6 +78,21 @@ export default {
         },
         {
           icon: 'mdi-chart-bubble',
+          title: 'Border Radius Generator',
+          to: '/border-radius-generator'
+        },
+        {
+          icon: 'mdi-chart-bubble',
+          title: 'Text Shadow Generator',
+          to: '/text-shadow-generator'
+        },
+        {
+          icon: 'mdi-chart-bubble',
+          title: 'Base64 Converter',
+          to: '/base64-converter'
+        },
+        {
+          icon: 'mdi-chart-bubble',
           title: 'Credit Card Generator',
           to: '/credit-card-generator'
         }

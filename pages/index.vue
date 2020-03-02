@@ -20,6 +20,9 @@ export default {
       { to: '/regex-replace-viewer', text: 'Regex Replace Viewer' },
       { to: '/box-shadow-generator', text: 'Box Shadow Generator' },
       { to: '/css-filters', text: 'CSS Filters' },
+      { to: '/border-radius-generator', text: 'Border Radius Generator' },
+      { to: '/text-shadow-generator', text: 'Text Shadow Generator' },
+      { to: '/base64-converter', text: 'Base64 Converter' },
       { to: '/credit-card-generator', text: 'Credit Card Generator' }
     ]
   }),
