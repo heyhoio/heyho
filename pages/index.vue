@@ -5,9 +5,9 @@
       From developers to developers 🥰!
     </p>
     <v-list width="100%">
-      <v-list-item v-for="({ to, text }, index) in links" :key="to" :to="to"
-        >{{ index + 1 }}. {{ text }}</v-list-item
-      >
+      <v-list-item v-for="({ to, text }, index) in links" :key="to" :to="to">
+        {{ index + 1 }}. {{ text }}
+      </v-list-item>
     </v-list>
   </v-layout>
 </template>
