@@ -23,7 +23,8 @@ export default {
       { to: '/border-radius-generator', text: 'Border Radius Generator' },
       { to: '/text-shadow-generator', text: 'Text Shadow Generator' },
       { to: '/base-64-converter', text: 'Base 64 Converter' },
-      { to: '/credit-card-generator', text: 'Credit Card Generator' }
+      { to: '/credit-card-generator', text: 'Credit Card Generator' },
+      { to: '/cnpj-generator', text: 'Cnpj Generator' }
     ]
   }),
   head() {
