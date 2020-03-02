@@ -28,10 +28,10 @@
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       <nuxt-link to="/" tag="v-toolbar-title" class="nav-logo d-flex">
         <img src="@/static/logo.svg" alt="logo" class="mr-1" />
-        heyho
+        <span>heyho</span>
       </nuxt-link>
       <v-spacer></v-spacer>
-      <nuxt-link to="/about" tag="span">
+      <nuxt-link to="/about" tag="span" class="default__about-link">
         about
       </nuxt-link>
     </v-app-bar>
@@ -88,8 +88,8 @@ export default {
         },
         {
           icon: 'mdi-chart-bubble',
-          title: 'Base64 Converter',
-          to: '/base64-converter'
+          title: 'Base 64 Converter',
+          to: '/base-64-converter'
         },
         {
           icon: 'mdi-chart-bubble',
@@ -110,5 +110,10 @@ export default {
 .nav-logo {
   align-items: center;
   cursor: pointer;
+}
+.default {
+  &__about-link {
+    cursor: pointer;
+  }
 }
 </style>

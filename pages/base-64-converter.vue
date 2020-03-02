@@ -1,24 +1,26 @@
 <template>
   <v-layout column justify-center align-center>
     <h1 class="font-weight-thin mb-5">Base64 Converter</h1>
-    <v-flex>
-      <v-text-field v-model="text" outlined label="Original Text" />
-      <v-switch
-        v-model="convertToBase64"
-        outlined
-        label="Convert To Base64"
-      ></v-switch>
-    </v-flex>
-    <v-flex>
+    <v-textarea
+      v-model="text"
+      class="base-64-converter__textarea"
+      outlined
+      label="Original Text"
+    />
+    <v-flex class="base-64-converter__result-wrapper">
       <p>Result:</p>
-      <p>{{ result }}</p>
+      <p class="base-64-converter__result">{{ result }}</p>
+    </v-flex>
+    <v-flex class="base-64-converter__result-wrapper">
+      <p>Decoded:</p>
+      <p class="base-64-converter__result">{{ decodedResult }}</p>
     </v-flex>
   </v-layout>
 </template>
 
 <script>
 import Vue from 'vue'
-import { Base64 } from 'js-base64'
+import { encode, decode } from '@/utils/base64'
 
 export default Vue.extend({
   name: 'Base64Converter',
@@ -27,8 +29,8 @@ export default Vue.extend({
     convertToBase64: true
   }),
   computed: {
-    result: (vm) =>
-      vm.convertToBase64 ? Base64.encode(vm.text) : Base64.decode(vm.text)
+    result: vm => encode(vm.text),
+    decodedResult: vm => decode(vm.result)
   },
   head() {
     return {
@@ -45,3 +47,15 @@ export default Vue.extend({
   }
 })
 </script>
+
+<style lang="scss">
+.base-64-converter {
+  &__textarea,
+  &__result-wrapper {
+    width: 500px;
+  }
+  &__result {
+    word-break: break-all;
+  }
+}
+</style>
