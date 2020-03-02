@@ -34,7 +34,7 @@ export default Vue.extend({
   },
   head() {
     return {
-      title: 'HeyHo - Regex Replace Viewer',
+      title: 'Regex Replace Viewer',
       meta: [
         {
           hid: 'regex replace viewer',
