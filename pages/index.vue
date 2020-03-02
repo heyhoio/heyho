@@ -22,7 +22,7 @@ export default {
       { to: '/css-filters', text: 'CSS Filters' },
       { to: '/border-radius-generator', text: 'Border Radius Generator' },
       { to: '/text-shadow-generator', text: 'Text Shadow Generator' },
-      { to: '/base-64-converter', text: 'Base64 Converter' },
+      { to: '/base-64-converter', text: 'Base 64 Converter' },
       { to: '/credit-card-generator', text: 'Credit Card Generator' }
     ]
   }),
