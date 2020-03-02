@@ -100,7 +100,7 @@ export default Vue.extend({
     },
     bgColor() {
       const [bgColor] = this.borderProps.filter(
-        (prop) => prop.name === 'Background Color'
+        prop => prop.name === 'Background Color'
       )
 
       return `${bgColor.color}`
