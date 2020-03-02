@@ -27,17 +27,20 @@ export default Vue.extend({
     convertToBase64: true
   }),
   computed: {
-    result() {
-      let formattedText = ''
-      if (this.convertToBase64) {
-        formattedText = Base64.encode(this.text)
-
-        return formattedText
-      }
-
-      formattedText = Base64.decode(this.text)
-
-      return formattedText
+    result: (vm) =>
+      vm.convertToBase64 ? Base64.encode(vm.text) : Base64.decode(vm.text)
+  },
+  head() {
+    return {
+      title: 'Base 64 Encoder and Decoder',
+      meta: [
+        {
+          hid: 'base 64 encoder and decoder',
+          name: 'Base 64 Encoder and Decoder',
+          content:
+            'A Base 64 Encoder and Decoder to get an ready-to-use visualization of base64 encoding/decoding'
+        }
+      ]
     }
   }
 })
