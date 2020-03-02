@@ -29,8 +29,8 @@ export default Vue.extend({
     convertToBase64: true
   }),
   computed: {
-    result: (vm) => encode(vm.text),
-    decodedResult: (vm) => decode(vm.result)
+    result: vm => encode(vm.text),
+    decodedResult: vm => decode(vm.result)
   },
   head() {
     return {
