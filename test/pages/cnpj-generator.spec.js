@@ -6,15 +6,7 @@ describe('Color Picker', () => {
   let vuetify
   let wrapper
   beforeAll(() => {
-    vuetify = new Vuetify({
-      mocks: {
-        $vuetify: {
-          lang: {
-            t: () => ''
-          }
-        }
-      }
-    })
+    vuetify = new Vuetify()
     wrapper = mount(CnpjGenerator, { vuetify })
   })
 

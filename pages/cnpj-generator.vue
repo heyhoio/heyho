@@ -10,21 +10,27 @@
       >
     </div>
     <v-flex class="cnpj-generator__result-wrapper">
-      <p v-if="result.cnpj" class="cnpj-generator__result">
-        Result: {{ result.cnpj }}
-        <v-icon
-          class="cnpj-generator__copy-button"
-          @click="saveToClipBoard(result.cnpj)"
-          >mdi-content-copy</v-icon
-        >
+      <p class="cnpj-generator__result">
+        Result:
+        <span v-if="result.cnpj"
+          >{{ result.cnpj }}
+          <v-icon
+            class="cnpj-generator__copy-button"
+            @click="saveToClipBoard(result.cnpj)"
+            >mdi-content-copy</v-icon
+          >
+        </span>
       </p>
-      <p v-if="result.maskCnpj" class="cnpj-generator__result">
-        Result with mask: {{ result.maskCnpj }}
-        <v-icon
-          class="cnpj-generator__copy-button"
-          @click="saveToClipBoard(result.maskCnpj)"
-          >mdi-content-copy</v-icon
-        >
+      <p class="cnpj-generator__result">
+        Result with mask:
+        <span v-if="result.maskCnpj"
+          >{{ result.maskCnpj }}
+          <v-icon
+            class="cnpj-generator__copy-button"
+            @click="saveToClipBoard(result.maskCnpj)"
+            >mdi-content-copy</v-icon
+          >
+        </span>
       </p>
     </v-flex>
   </v-layout>
@@ -57,18 +63,10 @@ export default Vue.extend({
 
     generateCnpj() {
       const n = 9
-      const n1 = this.random(n)
-      const n2 = this.random(n)
-      const n3 = this.random(n)
-      const n4 = this.random(n)
-      const n5 = this.random(n)
-      const n6 = this.random(n)
-      const n7 = this.random(n)
-      const n8 = this.random(n)
-      const n9 = 0
-      const n10 = 0
-      const n11 = 0
-      const n12 = 1
+      const [n1, n2, n3, n4, n5, n6, n7, n8, n9, n10, n11, n12] = new Array(8)
+        .fill(0)
+        .map(() => this.random(n))
+        .concat([0, 0, 0, 1])
       let d1 =
         n12 * 2 +
         n11 * 3 +
@@ -142,21 +140,20 @@ export default Vue.extend({
 
 <style lang="scss">
 .cnpj-generator {
-  &__textarea,
   &__result-wrapper {
     width: 500px;
     margin-top: 10px;
-  }
-  &__result {
-    word-break: break-all;
+    border: 1px solid #80808038;
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
   &__copy-button {
     font-size: 11pt !important;
     margin-left: 3px !important;
   }
-}
-
-#webpack-hot-middleware-clientOverlay {
-  display: none !important;
 }
 </style>
