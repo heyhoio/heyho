@@ -25,11 +25,7 @@
               :max="max"
               :min="min"
             />
-            <v-color-picker
-              v-if="color"
-              v-model="borderProps[index].color"
-              mode="rgba"
-            />
+            <v-color-picker v-if="color" v-model="borderProps[index].color" />
           </v-card-text>
         </v-card>
       </div>
@@ -98,13 +94,9 @@ export default Vue.extend({
       const [top, right, bottom, left] = this.borderProps
       return `${top.model}px ${right.model}px ${bottom.model}px ${left.model}px`
     },
-    bgColor() {
-      const [bgColor] = this.borderProps.filter(
-        prop => prop.name === 'Background Color'
-      )
-
-      return `${bgColor.color}`
-    }
+    bgColor: vm =>
+      vm.borderProps.filter(prop => prop.name.includes('Background')).shift()
+        .color
   },
   head() {
     return {

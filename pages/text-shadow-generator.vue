@@ -61,7 +61,7 @@
 import Vue from 'vue'
 
 export default Vue.extend({
-  name: 'BoxShadowGenerator',
+  name: 'TextShadowGenerator',
   data: () => ({
     textShadowProps: [
       {
@@ -82,12 +82,6 @@ export default Vue.extend({
         max: 40,
         model: ''
       },
-      // {
-      //   name: 'Opacity',
-      //   min: 0,
-      //   max: 400,
-      //   model: 0
-      // },
       {
         name: 'Shadow Color',
         color: '#000'
