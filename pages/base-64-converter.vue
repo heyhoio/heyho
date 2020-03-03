@@ -1,6 +1,7 @@
 <template>
   <v-layout column justify-center align-center>
     <h1 class="font-weight-thin mb-5">Base64 Converter</h1>
+    <v-switch v-model="encodeOrDecode" label="Toggle Encode/Decode" />
     <v-textarea
       v-model="text"
       class="base-64-converter__textarea"
@@ -10,10 +11,6 @@
     <v-flex class="base-64-converter__result-wrapper">
       <p>Result:</p>
       <p class="base-64-converter__result">{{ result }}</p>
-    </v-flex>
-    <v-flex class="base-64-converter__result-wrapper">
-      <p>Decoded:</p>
-      <p class="base-64-converter__result">{{ decodedResult }}</p>
     </v-flex>
   </v-layout>
 </template>
@@ -26,11 +23,10 @@ export default Vue.extend({
   name: 'Base64Converter',
   data: () => ({
     text: 'mywebsite.com',
-    convertToBase64: true
+    encodeOrDecode: true
   }),
   computed: {
-    result: vm => encode(vm.text),
-    decodedResult: vm => decode(vm.result)
+    result: vm => (vm.encodeOrDecode ? encode(vm.text) : decode(vm.text))
   },
   head() {
     return {
