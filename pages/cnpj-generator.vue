@@ -98,26 +98,7 @@ export default Vue.extend({
         n1 * 6
       d2 = 11 - this.mod(d2, 11)
       if (d2 >= 10) d2 = 0
-      const cnpj =
-        '' +
-        n1 +
-        n2 +
-        '.' +
-        n3 +
-        n4 +
-        n5 +
-        '.' +
-        n6 +
-        n7 +
-        n8 +
-        '/' +
-        n9 +
-        n10 +
-        n11 +
-        n12 +
-        '-' +
-        d1 +
-        d2
+      const cnpj = `${n1}${n2}.${n3}${n4}${n5}.${n6}${n7}${n8}/${n9}${n10}${n11}${n12}-${d1}${d2}`
       this.result.cnpj = cnpj.replace(/[^\w\s]/gi, '')
       this.result.maskCnpj = cnpj
     }
