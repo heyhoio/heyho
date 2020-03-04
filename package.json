@@ -17,7 +17,8 @@
     "@nuxtjs/dotenv": "^1.4.0",
     "@nuxtjs/pwa": "^3.0.0-0",
     "@nuxtjs/vuetify": "^1.11.0",
-    "nuxt": "^2.0.0"
+    "nuxt": "^2.0.0",
+    "v-mask": "^2.0.2"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^2.0.0",
