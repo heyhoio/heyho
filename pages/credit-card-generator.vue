@@ -10,7 +10,7 @@
           class="credit-card-generator__card"
           @click="saveToClipboard"
         >
-          {{ card }} <v-icon>mdi-content-copy</v-icon>
+          {{ card }} <v-icon>file-copy</v-icon>
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
