@@ -59,6 +59,9 @@ export default {
    ** https://github.com/nuxt-community/vuetify-module
    */
   vuetify: {
+    defaultAssets: {
+      icons: 'md' // 'mdi' || 'mdiSvg' || 'md' || 'fa' || 'fa4' || 'faSvg'
+    },
     customVariables: ['~/assets/variables.scss'],
     theme: {
       dark: true,

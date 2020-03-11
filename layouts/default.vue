@@ -52,47 +52,47 @@ export default {
       fixed: false,
       items: [
         {
-          icon: 'mdi-apps',
+          icon: 'trip_origin',
           title: 'Welcome',
           to: '/'
         },
         {
-          icon: 'mdi-chart-bubble',
-          title: 'Color Picker',
-          to: '/color-picker'
+          icon: 'trip_origin',
+          title: 'Palette Picker',
+          to: '/palette-picker'
         },
         {
-          icon: 'mdi-chart-bubble',
+          icon: 'trip_origin',
           title: 'Regex Replace Viewer',
           to: '/regex-replace-viewer'
         },
         {
-          icon: 'mdi-chart-bubble',
+          icon: 'trip_origin',
           title: 'Box Shadow Generator',
           to: '/box-shadow-generator'
         },
         {
-          icon: 'mdi-chart-bubble',
+          icon: 'trip_origin',
           title: 'CSS Filters',
           to: '/css-filters'
         },
         {
-          icon: 'mdi-chart-bubble',
+          icon: 'trip_origin',
           title: 'Border Radius Generator',
           to: '/border-radius-generator'
         },
         {
-          icon: 'mdi-chart-bubble',
+          icon: 'trip_origin',
           title: 'Text Shadow Generator',
           to: '/text-shadow-generator'
         },
         {
-          icon: 'mdi-chart-bubble',
+          icon: 'trip_origin',
           title: 'Base 64 Converter',
           to: '/base-64-converter'
         },
         {
-          icon: 'mdi-chart-bubble',
+          icon: 'trip_origin',
           title: 'Credit Card Generator',
           to: '/credit-card-generator'
         }

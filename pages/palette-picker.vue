@@ -6,16 +6,19 @@
         Close
       </v-btn>
     </v-snackbar>
-    <h1 class="font-weight-thin mb-5 text-center">Color and Palette Picker</h1>
-    <div v-for="(pallete, index) in palletes" :key="index">
+    <h1 class="font-weight-thin mb-5 text-center">Palette Picker</h1>
+    <v-btn color="primary" class="mb-5" @click="getPalette">
+      <v-icon>sync</v-icon>
+    </v-btn>
+    <div v-for="(pallete, index) in palettes" :key="index">
       <h2 class="mt-5 mb-5 headline font-weight-light">{{ pallete.name }}</h2>
       <v-flex d-flex flex-wrap>
         <v-card
           v-for="color in pallete.colors"
           :key="color"
           :style="{ backgroundColor: `#${color}` }"
-          class="color-picker__pallete-item"
-          @click="savePallete(color)"
+          class="palette-picker__palette-item"
+          @click="savePalette(color)"
         >
           <v-card-text>
             {{ color }}
@@ -28,11 +31,14 @@
 
 <script>
 import Vue from 'vue'
+import fetchColors from '@/api/palette-picker'
+import { generateName } from '@/utils/name-generator'
 
 export default Vue.extend({
-  name: 'ColorPicker',
+  name: 'PalettePicker',
   data: () => ({
-    palletes: [
+    randomPalette: [],
+    palettes: [
       {
         name: 'Velvet',
         colors: ['EE4540', 'C72C41', '801336', '510A32', '2D142C']
@@ -71,7 +77,27 @@ export default Vue.extend({
     timeout: 2000
   }),
   methods: {
-    savePallete(color) {
+    toHex(r, g, b) {
+      return [r, g, b]
+        .reduce((acc, curr) => {
+          let hex = Number(curr).toString(16)
+          acc.push(hex.length < 2 ? (hex = '0' + hex) : hex)
+          return acc
+        }, [])
+        .join('')
+    },
+    async getPalette() {
+      const { result } = await fetchColors()
+      const colors = result.map(colors => {
+        const [r, g, b] = colors
+        return this.toHex(r, g, b)
+      })
+      this.palettes.unshift({
+        name: generateName(),
+        colors
+      })
+    },
+    savePalette(color) {
       navigator.clipboard.writeText(`#${color}`)
       this.snackbarColor = `#${color}`
       this.snackbar = true
@@ -96,8 +122,8 @@ export default Vue.extend({
 <style lang="scss">
 @import '~vuetify/src/styles/settings/_variables';
 
-.color-picker {
-  &__pallete-item {
+.palette-picker {
+  &__palette-item {
     cursor: pointer;
     width: 200px;
     height: 200px;
