@@ -6,7 +6,25 @@
         Close
       </v-btn>
     </v-snackbar>
-    <h1 class="font-weight-thin mb-5 text-center">Color and Palette Picker</h1>
+    <h1 class="font-weight-thin mb-5 text-center">Palette Picker</h1>
+    <v-btn color="primary" class="mb-5" @click="getPalette">
+      <v-icon>sync</v-icon>
+    </v-btn>
+    <div>
+      <v-flex d-flex flex-wrap>
+        <v-card
+          v-for="([r, g, b], index) in randomPalette"
+          :key="index"
+          :style="{ backgroundColor: toHex(r, g, b) }"
+          class="color-picker__pallete-item"
+          @click="savePallete(`rgba(${r}, ${g}, ${b}, 1)`)"
+        >
+          <v-card-text>
+            {{ toHex(r, g, b) }}
+          </v-card-text>
+        </v-card>
+      </v-flex>
+    </div>
     <div v-for="(pallete, index) in palletes" :key="index">
       <h2 class="mt-5 mb-5 headline font-weight-light">{{ pallete.name }}</h2>
       <v-flex d-flex flex-wrap>
@@ -28,10 +46,12 @@
 
 <script>
 import Vue from 'vue'
+import fetchColors from '@/api/palette-picker'
 
 export default Vue.extend({
-  name: 'ColorPicker',
+  name: 'PalettePicker',
   data: () => ({
+    randomPalette: [],
     palletes: [
       {
         name: 'Velvet',
@@ -71,6 +91,27 @@ export default Vue.extend({
     timeout: 2000
   }),
   methods: {
+    toHex(r, g, b) {
+      return [r, g, b]
+        .reduce(
+          (acc, curr) => {
+            let hex = Number(curr).toString(16)
+            acc.push(hex.length < 2 ? (hex = '0' + hex) : hex)
+            return acc
+          },
+          ['#']
+        )
+        .join('')
+    },
+    async getPalette() {
+      try {
+        const { result } = await fetchColors()
+        this.randomPalette = result
+      } catch (error) {
+        // eslint-disable-next-line no-console
+        console.log(error)
+      }
+    },
     savePallete(color) {
       navigator.clipboard.writeText(`#${color}`)
       this.snackbarColor = `#${color}`

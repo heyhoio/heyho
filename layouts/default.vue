@@ -58,8 +58,8 @@ export default {
         },
         {
           icon: 'mdi-chart-bubble',
-          title: 'Color Picker',
-          to: '/color-picker'
+          title: 'Palette Picker',
+          to: '/palette-picker'
         },
         {
           icon: 'mdi-chart-bubble',
