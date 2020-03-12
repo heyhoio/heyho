@@ -17,6 +17,7 @@
     "@nuxtjs/dotenv": "^1.4.0",
     "@nuxtjs/pwa": "^3.0.0-0",
     "@nuxtjs/vuetify": "^1.11.0",
+    "isomorphic-fetch": "^2.2.1",
     "nuxt": "^2.0.0"
   },
   "devDependencies": {
