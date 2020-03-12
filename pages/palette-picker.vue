@@ -31,7 +31,6 @@
 
 <script>
 import Vue from 'vue'
-import fetchColors from '@/api/palette-picker'
 import { generateName } from '@/utils/name-generator'
 
 export default Vue.extend({
@@ -87,7 +86,11 @@ export default Vue.extend({
         .join('')
     },
     async getPalette() {
-      const { result } = await fetchColors()
+      const { result } = await fetch('api/palette-picker')
+        .then(result => result.json())
+        // eslint-disable-next-line no-console
+        .catch(console.log)
+
       const colors = result.map(colors => {
         const [r, g, b] = colors
         return this.toHex(r, g, b)

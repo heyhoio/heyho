@@ -86,5 +86,11 @@ export default {
      ** You can extend webpack config here
      */
     extend(config, ctx) {}
-  }
+  },
+  serverMiddleware: [
+    {
+      path: '/api/palette-picker',
+      handler: '~/api/palette-picker.js'
+    }
+  ]
 }
