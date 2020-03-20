@@ -5,9 +5,12 @@
       From developers to developers 🥰!
     </p>
     <v-list width="100%">
-      <v-list-item v-for="({ to, text }, index) in links" :key="to" :to="to">
-        {{ index + 1 }}. {{ text }}
-      </v-list-item>
+      <v-list-item
+        v-for="({ to, text }, index) in orderedLinks"
+        :key="to"
+        :to="to"
+        >{{ index + 1 }}. {{ text }}</v-list-item
+      >
     </v-list>
   </v-layout>
 </template>
@@ -26,6 +29,32 @@ export default {
       { to: '/credit-card-generator', text: 'Credit Card Generator' }
     ]
   }),
+
+  computed: {
+    orderedLinks() {
+      const orderedLink = Array.from(this.links)
+
+      return orderedLink.sort((a, b) => this.compare(a, b))
+    }
+  },
+
+  methods: {
+    compare(a, b) {
+      const textA = a.text.toUpperCase()
+      const textB = b.text.toUpperCase()
+
+      let comparison = 0
+
+      if (textA > textB) {
+        comparison = 1
+      } else if (textA < textB) {
+        comparison = -1
+      }
+
+      return comparison
+    }
+  },
+
   head() {
     return {
       title: 'Ready to Use Development Tools',
